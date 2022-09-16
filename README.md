@@ -1,7 +1,8 @@
-# template-wasm-rust-ts
+# game-of-life
 
-A project's template to use WebAssembly with [`Rust`](https://doc.rust-lang.org/book/) along [`TypeScript`](https://www.typescriptlang.org/docs/handbook/intro.html).  
-Template is using [`WebPack 5`](https://webpack.js.org/concepts/) and [`wasm-pack`](https://rustwasm.github.io/docs/wasm-pack/) to compile and build.  
+A **Conway's Game of Life** demo using WebAssembly with `Rust` and `TypeScript`.   
+
+See [rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 
 ---
 ---
