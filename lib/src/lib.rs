@@ -16,6 +16,15 @@ pub enum Cell {
     ALIVE = 1,
 }
 
+impl Cell {
+    pub fn toggle(&mut self) {
+        *self = match *self {
+            Cell::DEAD => Cell::ALIVE,
+            Cell::ALIVE => Cell::DEAD,
+        };
+    }
+}
+
 #[wasm_bindgen]
 #[derive(Debug)]
 pub struct Board {
@@ -53,5 +62,11 @@ impl Board {
         }).collect();
 
         js_sys::Uint8Array::from(&arr[..])
+    }
+
+    pub fn toggle_cells(&mut self) {
+        for cell_index in 0..self.get_board_length() {
+            self.cells[cell_index].toggle();
+        }
     }
 }
