@@ -4,6 +4,8 @@ A **Conway's Game of Life** demo using WebAssembly with `Rust` and `TypeScript`.
 
 See [rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 
+See [demo](https://jimj92120.github.io/game-of-life) in Github Pages.  
+
 ---
 ---
 ## Requirements
