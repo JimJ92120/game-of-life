@@ -212,7 +212,6 @@ export default class Engine {
         0,
         this.verticesCount / this.vertexSize
       );
-
     }
   }
 }
