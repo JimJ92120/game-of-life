@@ -11,7 +11,6 @@ const OPTIONS = {
 };
 const U_DIMENSION = "u_dimension";
 const U_RESOLUTION = "u_resolution";
-const U_VERTICES_COUNT = "u_verticesCount";
 const U_POINT_SIZE = "u_pointSize";
 const U_COLOR_1 = "u_color1";
 const U_COLOR_2 = "u_color2";
@@ -22,7 +21,6 @@ const VERTEX_SHADER_SOURCE = `#version 300 es
 
   uniform vec2 ${U_DIMENSION};
   uniform vec2 ${U_RESOLUTION};
-  uniform int ${U_VERTICES_COUNT};
   uniform float ${U_POINT_SIZE};
   uniform vec4 ${U_COLOR_1};
   uniform vec4 ${U_COLOR_2};
@@ -167,8 +165,6 @@ export default class Engine {
         this.context.getUniformLocation(this.program, U_DIMENSION);
       const u_resolutionLocation: WebGLUniformLocation | null =
         this.context.getUniformLocation(this.program, U_RESOLUTION);
-      const u_verticesCountLocation: WebGLUniformLocation | null =
-        this.context.getUniformLocation(this.program, U_VERTICES_COUNT);
       const u_pointSizeLocation: WebGLUniformLocation | null =
         this.context.getUniformLocation(this.program, U_POINT_SIZE);
       const u_color1Locaton: WebGLUniformLocation | null =
@@ -180,7 +176,6 @@ export default class Engine {
 
       this.context.uniform2fv(u_dimensionLocation, this.dimension);
       this.context.uniform2fv(u_resolutionLocation, this.resolution);
-      this.context.uniform1i(u_verticesCountLocation, this.verticesCount);
       this.context.uniform1f(u_pointSizeLocation, OPTIONS.pointSize);
       this.context.uniform4fv(u_color1Locaton, OPTIONS.pointColors[0]);
       this.context.uniform4fv(u_color2Locaton, OPTIONS.pointColors[1]);
