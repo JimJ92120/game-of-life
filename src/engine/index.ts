@@ -5,7 +5,7 @@ import Buffer from "./Buffer";
 const OPTIONS = {
   pointSize: 50.0,
   pointColors: [
-    [1, 0, 0, 0],
+    [1, 0, 0, 1],
     [0, 0, 1, 1]
   ],
 };
