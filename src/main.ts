@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
     .then(() => {
       const engine: Engine = new Engine("scene");
       const board: Board = new Board(engine.resolution[1], engine.resolution[0]);
-      const vertexSize: number = 1;
       
       let loop = 0.0;
       const animate: FrameRequestCallback = () => {
