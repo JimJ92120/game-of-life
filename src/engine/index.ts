@@ -74,6 +74,7 @@ export default class Engine {
   resolution: [number, number] = [0, 0];
   dimension: [number, number] = [0, 0];
   verticesCount: number = 0;
+  vertexSize: number = 1;
   context: WebGL2RenderingContext | null = null;
   shaders: [
     WebGLShader | null,
@@ -84,15 +85,19 @@ export default class Engine {
   constructor(canvasId: string) {
     this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
 
-    this.setResolution();
-    this.setDimension();
     this.setContext();
 
-    this.resize();
+    if (this.context) {
+      this.setResolution();
+      this.setDimension();
+      this.setVerticesCount();
 
-    this.setShaders();
-    this.setProgram();
-    this.setUniforms();
+      this.resize();
+
+      this.setShaders();
+      this.setProgram();
+      this.setUniforms();
+    }
   }
   
   setResolution() {
@@ -179,7 +184,7 @@ export default class Engine {
     }
   }
 
-  draw(bufferData: Float32Array, vertexSize: number) {
+  draw(bufferData: Float32Array) {
     if (this.context
       && this.program
     ) {
@@ -196,13 +201,18 @@ export default class Engine {
       this.context.enableVertexAttribArray(colorAttribute);
       this.context.vertexAttribPointer(
         colorAttribute,
-        vertexSize,
+        this.vertexSize,
         this.context.FLOAT,
         false,
         0,
         0
       );
-      this.context.drawArrays(this.context.POINTS, 0, this.verticesCount / vertexSize);
+      this.context.drawArrays(
+        this.context.POINTS,
+        0,
+        this.verticesCount / this.vertexSize
+      );
+
     }
   }
 }

@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const animate: FrameRequestCallback = () => {
         if (loop % 100 === 0) {
           board.toggle_cells();
-          engine.draw(new Float32Array(board.get_cells()), vertexSize);
+          engine.draw(new Float32Array(board.get_cells()));
         }
     
         loop = requestAnimationFrame(animate);
