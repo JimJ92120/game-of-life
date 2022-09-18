@@ -83,8 +83,7 @@ export default class Engine {
   program: WebGLProgram | null = null;
 
   constructor(canvasId: string) {
-    this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-
+    this.setCanvas(canvasId);
     this.setContext();
 
     if (this.context) {
@@ -100,6 +99,10 @@ export default class Engine {
     }
   }
   
+  setCanvas(canvasId: string) {
+    this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
+  }
+
   setResolution() {
     const canvasClientRect: DOMRect = this.canvas.getBoundingClientRect();
     const { height, width } = canvasClientRect;
