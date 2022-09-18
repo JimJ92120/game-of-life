@@ -108,8 +108,8 @@ export default class Engine {
     const { height, width } = canvasClientRect;
 
     this.resolution = [
-      Math.floor(width / OPTIONS.pointSize),
-      Math.floor(height / OPTIONS.pointSize),
+      Math.ceil(width / OPTIONS.pointSize),
+      Math.ceil(height / OPTIONS.pointSize),
     ];
   }
 
