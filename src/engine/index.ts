@@ -36,7 +36,7 @@ const VERTEX_SHADER_SOURCE = `#version 300 es
   
     vec2 position = vec2(
       mod(index, ${U_RESOLUTION}[0]), 
-      floor(index / ${U_RESOLUTION}[0])
+      ${U_RESOLUTION}[1] - 1.0 - floor(index / ${U_RESOLUTION}[0])
     ) * ${U_POINT_SIZE} + ${U_POINT_SIZE} / 2.0;
 
     vec2 zeroToOne = position / ${U_DIMENSION};
