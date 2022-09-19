@@ -1,6 +1,6 @@
 # game-of-life
 
-A **Conway's Game of Life** demo using WebAssembly with `Rust` and `TypeScript`.   
+A **Conway's Game of Life** demo using WebAssembly with `Rust` and `TypeScript` and rendering with `WebGL 2`.     
 
 See [rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).  
 
@@ -17,6 +17,8 @@ See [demo](https://jimj92120.github.io/game-of-life) in Github Pages.
 | `Rust`       | `^1.63.0` |
 | `Cargo`      | `^1.63.0` |
 | `wasm-pack`  | `^0.10.3` |
+
+Also requires a browser compatible with `WebGL 2`.  
   
 
 ## Project's structure
