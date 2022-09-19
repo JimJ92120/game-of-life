@@ -6,7 +6,7 @@ const OPTIONS = {
   pointSize: 50.0,
   pointColors: [
     [1, 0, 0, 1],
-    [0, 0, 1, 1]
+    [0, 0, 0, 1]
   ],
 };
 const U_DIMENSION = "u_dimension";
